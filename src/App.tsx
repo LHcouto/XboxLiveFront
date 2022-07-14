@@ -3,14 +3,20 @@ import { ThemeProvider } from "styled-components";
 import theme from "assets/styles/theme";
 import "./App.css";
 import { BrowserRouter } from "react-router-dom";
-import Router from './router';
+import Router from "./router";
+import { QueryClient, QueryClientProvider } from "react-query";
 
+const queryClient = new QueryClient();
 function App() {
-  return <ThemeProvider theme={theme}>
-    <BrowserRouter>
-    <Router/>
-    </BrowserRouter>
-  </ThemeProvider>;
+  return (
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <QueryClientProvider client={queryClient}>
+          <Router />
+        </QueryClientProvider>
+      </BrowserRouter>
+    </ThemeProvider>
+  );
 }
 
 export default App;
