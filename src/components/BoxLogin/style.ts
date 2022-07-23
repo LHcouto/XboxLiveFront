@@ -89,10 +89,7 @@ export const BoxLoginQuestion = styled.div`
     a {
       padding: 0 0 0 0.5rem;
       cursor: pointer;
-      color: ${theme.colors.baseBg2};
-    }
-    text {
-      color: ${theme.colors.baseBg3};
+      color: #8ff638;
     }
   `}
 `;
