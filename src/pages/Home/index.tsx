@@ -13,7 +13,7 @@ const Home = () => {
 
 	return (
 		<S.Home>
-			<Menu active={RoutePath.HOME} navItems={navigationItems} />
+			<Menu active={RoutePath.HOMEPAGE} navItems={navigationItems} />
 			<S.HomeContent>
 				<header>
 					<S.HomeHeaderDetails>

@@ -6,7 +6,7 @@ import { RoutePath } from "types/routes";
 export const navigationItems: NavItem[] = [
   {
     icon: <Home />,
-    path: RoutePath.HOME,
+    path: RoutePath.HOMEPAGE,
   },
   {
     icon: <Settings />,

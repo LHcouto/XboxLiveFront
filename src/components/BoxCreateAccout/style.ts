@@ -80,19 +80,3 @@ export const BoxLoginError = styled.span`
     margin-top: 25px;
   `}
 `;
-
-export const BoxLoginQuestion = styled.div`
-  ${({ theme }) => css`
-    margin-top: 1rem;
-    font-family: ${theme.constants.headingFontFamily};
-    text-align: center;
-    a {
-      padding: 0 0 0 0.5rem;
-      cursor: pointer;
-      color: ${theme.colors.baseBg2};
-    }
-    text {
-      color: ${theme.colors.baseBg3};
-    }
-  `}
-`;
