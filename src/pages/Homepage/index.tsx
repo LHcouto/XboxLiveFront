@@ -3,7 +3,6 @@ import { DateTime } from "luxon";
 import { findProfileById } from "services/profileService";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { RiArrowGoBackLine } from "react-icons/ri";
 interface Profiles {
   id: string;
   title: string;
@@ -82,7 +81,7 @@ const Homepage = () => {
       <S.HomepageHeaderDetails>
 
         <S.HomepageHeaderDetailsDate>
-        <RiArrowGoBackLine cursor='pointer'  size={25} onClick={goToProfile}/>
+        <img onClick={goToProfile}/>
           <S.HomepageHeaderDetailsImg />
           <S.HomepageHeaderDetailsText onClick={goToProfile}>
             {profileId?.title}

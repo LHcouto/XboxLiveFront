@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components";
-import background from "assets/images/background.jpg";
+import background from "assets/imgs/game-pattern.png";
 
 export const allGames = styled.section`
   ${({ theme }) => css`
-  background-image: url(${background});
+    background-image: url(${background});
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -12,22 +12,19 @@ export const allGames = styled.section`
     color: ${theme.colors.textColor};
     display: flex;
     justify-content: space-between;
-
-    `}
+  `}
 `;
 export const allGamesContent = styled.main`
-  ${({theme}) => css`
+  ${({ theme }) => css`
     background-color: ${theme.colors.baseBg2};
     width: calc(100% - 450px);
     padding: 20px;
     overflow: auto;
     height: 100vh;
     box-sizing: border-box;
-    h1{
+    h1 {
       font-family: ${theme.constants.bodyFontFamily};
-      font-size: ${theme.constants.headingFontSize}
-     
+      font-size: ${theme.constants.headingFontSize};
     }
-
   `}
 `;
