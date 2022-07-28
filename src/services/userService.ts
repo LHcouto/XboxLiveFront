@@ -1,5 +1,5 @@
 import axios from "axios";
-import api from "./Api";
+import api from "./api";
 import { User } from "types/user-type";
 import swal from "sweetalert";
 axios.defaults.baseURL = "https://projetobluemodulo4.herokuapp.com/";

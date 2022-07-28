@@ -1,5 +1,5 @@
-import api from './Api'
-import swall from 'sweetalert'
+import api from './api'
+
 
 const homepageGames = {
     allGames: (id:string) =>

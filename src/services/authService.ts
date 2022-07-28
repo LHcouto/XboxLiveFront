@@ -1,5 +1,5 @@
 import swal from "sweetalert";
-import api from "./Api";
+import api from "./api";
 interface userLoginObjt {
   email: string;
   password: string;

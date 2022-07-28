@@ -1,5 +1,5 @@
 import { Profile } from "types/profile-type";
-import api from "./Api";
+import api from "./api";
 import swal from 'sweetalert'
 const findAllProfiles = {
   allProfiles: () =>
