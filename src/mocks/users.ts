@@ -1,1 +1,51 @@
-export const users = {}
+export const users = [
+  {
+    id: "b46f960f-4a78-4253-b93b-8e6db4278892",
+    name: "Luis Henrique do Couto Pires",
+    email: "lhcp96@gmail.com",
+    createdAt: "2022-07-22T01:05:56.483Z",
+    updateAt: "2022-07-22T01:05:56.483Z",
+  },
+  {
+    id: "d6ad115f-71fb-4231-a585-6e3a61a0a63b",
+    name: "luis",
+    email: "asdasasdasd",
+    createdAt: "2022-07-23T01:43:53.826Z",
+    updateAt: "2022-07-23T01:43:53.827Z",
+  },
+  {
+    id: "79c167e0-d6c8-4cf4-a0c7-ec28648737e8",
+    name: "luiscouto",
+    email: "xluisx_couto@hotmail.com",
+    createdAt: "2022-07-23T20:49:29.678Z",
+    updateAt: "2022-07-23T20:49:29.679Z",
+  },
+  {
+    id: "4206790a-eda1-4983-b4be-840a5fa21c98",
+    name: "LuisCouto",
+    email: "xluisx_couto@live.com",
+    createdAt: "2022-07-24T16:37:30.414Z",
+    updateAt: "2022-07-24T16:37:30.415Z",
+  },
+  {
+    id: "cf6656a4-027a-447b-87d2-1201ec06b590",
+    name: "LuisCouto",
+    email: "lhcp97@gmail.com",
+    createdAt: "2022-07-25T22:46:49.561Z",
+    updateAt: "2022-07-25T22:46:49.562Z",
+  },
+  {
+    id: "82590676-2e7d-4efa-b190-158786c27df1",
+    name: "LuisCouto",
+    email: "lhcp98@gmail.com",
+    createdAt: "2022-07-26T01:44:52.544Z",
+    updateAt: "2022-07-26T01:44:52.544Z",
+  },
+  {
+    id: "3acde297-60a4-4892-9c91-09ab2635129d",
+    name: "Luis",
+    email: "lhcp99@gmail.com",
+    createdAt: "2022-07-27T22:50:15.740Z",
+    updateAt: "2022-07-27T22:50:15.741Z",
+  },
+];

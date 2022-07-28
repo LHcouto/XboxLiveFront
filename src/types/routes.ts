@@ -1,8 +1,9 @@
 export enum RoutePath {
+  GAMES = "/allgames/:id",
   LOGIN = "/",
   HOMEPAGE = "/homepage/:id",
+  PROFILE = "/profile",
+  CREATE_PROFILE = "/createprofile",
   REGISTER = "/register",
-  CREATE_PROFILE = '/createprofile',
-  GAMES = "/allgames",
-  PROFILE= '/profile',
+  CREATE_GENRE = "/creategenre/:id",
 }

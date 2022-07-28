@@ -1,12 +1,11 @@
 import styled, { css } from "styled-components";
 import background from "assets/imgs/game-pattern.png";
-import user from "../../assets/imgs/perfil.png";
+import user from "assets/imgs/perfil.png";
 
 export const ProfileContent = styled.section`
   ${({ theme }) => css`
     width: 100vw;
     height: 100vh;
-
     background: url(${background});
     background-repeat: no-repeat;
     background-size: cover;
@@ -54,6 +53,7 @@ export const ProfileHeaderDetailsImg = styled.img`
 export const allCardProfile = styled.div`
   ${({ theme }) => css`
     background-color: ${theme.colors.baseBg1};
+    box-shadow: 3px 3px 6px 3px ${theme.colors.shadowColor};
     width: 95%;
     height: 50%;
     align-items: center;
@@ -72,6 +72,7 @@ export const uniqueCardProfile = styled.div`
     flex-direction: column;
     border-radius: 2rem;
     cursor: pointer;
+
     img {
       width: 50%;
       margin-top: 1rem;
@@ -89,7 +90,7 @@ export const Header = styled.div`
 export const Settings = styled.div`
   ${({ theme }) => css`
     width: 3%;
-    background-color: ${theme.colors.baseBg3};
+    background-color: ${theme.colors.baseBg2};
     height: 50%;
     margin: 1rem 1rem 2rem 0.5rem;
     display: flex;
@@ -134,7 +135,7 @@ export const buttonModal = styled.button`
     background-color: transparent;
     display: flex;
     cursor: pointer;
-    
+
     margin: 0;
   }
 `;
@@ -142,12 +143,11 @@ export const UserModal = styled.form`
   ${({ theme }) => css`
     display: flex;
     width: 100%;
-   
-    
+
     justify-content: center;
     flex-direction: column;
     align-items: center;
-   
+
     label {
       align-self: flex-start;
       font-family: ${theme.constants.bodyFontFamily};
@@ -168,11 +168,30 @@ export const UserModal = styled.form`
   `}
 `;
 export const userModalTitle = styled.h5`
-${({theme})=>css`
+  ${({ theme }) => css`
     font-family: ${theme.constants.headingFontFamily};
     color: ${theme.colors.textColor};
     font-size: 1rem;
+  `}
+`;
 
-`}
-
-`
+export const buttonDelete = styled.div`
+  ${({ theme }) => css`
+    width: 20%;
+    background: transparent;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  `}
+`;
+export const deleteModalext = styled.h3`
+  ${({ theme }) => css`
+    width: 100%;
+    text-align: center;
+    font-family: ${theme.constants.headingFontFamily};
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+  `}
+`;

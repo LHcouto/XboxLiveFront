@@ -36,7 +36,7 @@ const BoxLogin = () => {
         icon: "success",
         timer: 3000,
       });
-      navigate("/homepage/:id");
+      navigate("/profile");
     }
     console.log(response.data);
   };
@@ -70,7 +70,7 @@ const BoxLogin = () => {
         <ButtonLarge value="Entrar" type="submit" />
         <S.BoxLoginQuestion>
           Não possui uma conta?
-          <a onClick={goToRegister}>CLICK HERE</a>
+          <a onClick={goToRegister}>CLICK AQUI</a>
         </S.BoxLoginQuestion>
       </S.BoxLoginForm>
     </S.BoxLogin>

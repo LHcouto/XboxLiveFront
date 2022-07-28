@@ -1,9 +1,10 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://projetobluemodulo4.herokuapp.com/",
+  baseURL: "https://projetobluemodulo4.herokuapp.com/",
 });
 
+// intercepta o que vai as chamadas para o backend.
 api.interceptors.request.use((config: any) => {
   try {
     const token = localStorage.getItem("jwt");

@@ -1,15 +1,15 @@
+import SaveButton from "components/SaveButton";
 import { useEffect, useState } from "react";
+import { AiOutlineLogout, AiOutlineRollback } from "react-icons/ai";
+import { FiSettings } from "react-icons/fi";
+import { IoPersonAddOutline } from "react-icons/io5";
+import Modal from "react-modal";
 import { useNavigate } from "react-router-dom";
 import { userLoggedService } from "services/authService";
 import { findAllProfiles } from "services/profileService";
 import { userService } from "services/userService";
 import swall from "sweetalert";
 import * as S from "./style";
-import { FiSettings } from "react-icons/fi";
-import Modal from "react-modal";
-import { AiOutlineRollback } from "react-icons/ai";
-
-import CreateProfile from "components/CreateProfile";
 interface Profiles {
   id: string;
   title: string;
@@ -66,12 +66,9 @@ const Profile = () => {
   function closeModal() {
     setIsOpen(false);
   }
-
   const [modalIsOpen, setIsOpen] = useState<boolean>(false);
 
   const [profileUser, setProfileUser] = useState<Profiles[]>([]);
-
-  const [user, setUser] = useState<User>();
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -83,7 +80,7 @@ const Profile = () => {
     };
     await userService.UpUser(userLogged.id, upUser);
     swall({
-      title: "Certinho!",
+      title: "OK!",
       text: "Usuário alterado com sucesso!",
       icon: "success",
       timer: 3000,
@@ -99,7 +96,7 @@ const Profile = () => {
 
   const getUserLogged = async () => {
     const response = await userLoggedService.userLogged();
-    console.log(response.data);
+
     localStorage.setItem("idUser", response.data.id);
     setUserLogged(response.data);
   };
@@ -112,7 +109,7 @@ const Profile = () => {
         icon: "error",
         timer: 7000,
       });
-      navigate("/login");
+      navigate("/");
     } else {
       const response = await findAllProfiles.allProfiles();
 
@@ -135,12 +132,34 @@ const Profile = () => {
     if (profile) {
       setProfileUser(profile);
     }
-    console.log(profileUser);
+
   };
 
   function goToHomePage(id: string) {
     navigate(`/homepage/${id}`);
   }
+
+function logout (){
+setUserLogged({
+  id: "",
+  name: "",
+  email: "",
+  password: "",
+  confirmPassword: "",
+  cpf: "",
+})
+localStorage.removeItem(`jwt`)
+
+swall({
+  title: "OK!",
+  text: "Usuário deslogado com sucesso!",
+  icon: "success",
+  timer: 5000,
+
+})
+navigate('/')
+}
+  
 
   return (
     <S.ProfileContent>
@@ -161,18 +180,21 @@ const Profile = () => {
 
         <S.allCardProfile>
           {profileUser?.map((profile, index) => (
-            <S.uniqueCardProfile
-              onClick={() => {
-                goToHomePage(profile.id);
-              }}
-              key={index}
-            >
-              <img src={profile.imageUrl} alt="imagem do perfil" />
+            <S.uniqueCardProfile key={index}>
+              <img
+                src={profile.imageUrl}
+                alt="imagem do perfil"
+                onClick={() => {
+                  goToHomePage(profile.id);
+                }}
+                key={index}
+              />
               <h1>{profile.title}</h1>
+            
             </S.uniqueCardProfile>
           ))}
           <S.uniqueCardProfile>
-            <h5 onClick={goToCreateProfile}>New Profile</h5>
+            <IoPersonAddOutline size={50} onClick={goToCreateProfile} />
           </S.uniqueCardProfile>
         </S.allCardProfile>
       </S.ProfileMain>
@@ -208,7 +230,16 @@ const Profile = () => {
           />
           <label htmlFor="cpf">CPF:</label>
           <input type="text" name="cpf" defaultValue={userLogged.cpf} />
-          
+          <SaveButton type="submit" />
+          <S.deleteModalext>
+          Gostaria de deslogar?{" "}
+              <AiOutlineLogout
+                size={25}
+                color="red"
+                cursor="pointer"
+                onClick={logout}
+              />
+              </S.deleteModalext>
         </S.UserModal>
       </Modal>
     </S.ProfileContent>
